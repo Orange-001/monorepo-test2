@@ -1,0 +1,27 @@
+{
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs",
+    "internal/*"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "pnpm run -C internal/build build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "unplugin-vue-macros": "^2.11.6",
+    "vue": "^3.4.38"
+  }
+}

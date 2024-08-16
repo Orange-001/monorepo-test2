@@ -1,0 +1,29 @@
+{
+  "name": "@my-ui-lib/build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@vue/compiler-sfc": "^3.4.38",
+    "less": "^4.2.0",
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "rollup": "^4.20.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4",
+    "vue": "^3.4.38"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

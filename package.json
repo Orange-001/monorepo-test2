@@ -7,13 +7,16 @@
   ],
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "pnpm run -C internal/build build"
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
+    "build": "pnpm run -C internal/build start"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
@@ -23,5 +26,9 @@
     "typescript": "^5.5.4",
     "unplugin-vue-macros": "^2.11.6",
     "vue": "^3.4.38"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "consola": "^3.2.3"
   }
 }

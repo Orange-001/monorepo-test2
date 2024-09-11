@@ -13,6 +13,10 @@ pnpm run -C play dev
 pnpm i rollup -w
 (3)安装到指定workspace
 pnpm i rollup --filter build
+(4)递归、并行执行命令
+pnpm run -r --parallel clean
+-r（--recursive）：递归地在所有子包（子项目）中执行命令
+--parallel：并行执行命令，而不是顺序执行
 
 Changesets
 1、添加变更集工具

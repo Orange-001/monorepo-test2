@@ -4,13 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "start": "gulp --require node_modules/@esbuild-kit/cjs-loader -f gulpfile.ts"
   },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/gulp": "^4.0.17",
+    "@vitejs/plugin-vue": "^5.1.3",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vue/compiler-sfc": "^3.4.38",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "gulp": "^5.0.0",
     "less": "^4.2.0",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
@@ -22,8 +35,5 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
     "vue": "^3.4.38"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

@@ -12,7 +12,11 @@ export default series(
   withTaskName('clean', () => run('pnpm run clean')),
   withTaskName('createOutput', () => mkdir(myUiLibOutput, { recursive: true })),
 
-  parallel(runTask('buildModules')),
+  parallel(
+    runTask('buildModules'),
+    runTask('generateTypesDefinitions'),
+    //
+  ),
 )
 
 export * from './src'

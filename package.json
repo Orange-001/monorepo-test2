@@ -23,12 +23,13 @@
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.4",
-    "unplugin-vue-macros": "^2.11.6",
-    "vue": "^3.4.38"
+    "unplugin-vue-macros": "^2.11.6"
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "consola": "^3.2.3"
+    "consola": "^3.2.3",
+    "ts-morph": "^23.0.0",
+    "typescript": "^5.6.2",
+    "vue": "^3.5.4"
   }
 }

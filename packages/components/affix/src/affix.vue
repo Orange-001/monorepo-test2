@@ -1,6 +1,12 @@
 <template>
-  <div>affix</div>
+  <div>
+    <div>affix</div>
+    <div>{{ content }}</div>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
-<style lang="less" scoped></style>
+<script setup lang="ts">
+defineProps<{
+  content: string
+}>()
+</script>

@@ -1,0 +1,5 @@
+export const PKG_PREFIX = '@my-ui-lib'
+export const PKG_NAME = 'my-ui-lib'
+export const PKG_CAMELCASE_NAME = 'MyUiLib'
+export const PKG_CAMELCASE_LOCAL_NAME = 'MyUiLibLocale'
+export const PKG_BRAND_NAME = 'My Ui Lib'

@@ -28,5 +28,9 @@ npx changeset version
 4、发布
 npx changeset publish
 
+rimraf
+移除所有node_modules
+npx rimraf --glob "**/node_modules"
+
 Rollup
 npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript

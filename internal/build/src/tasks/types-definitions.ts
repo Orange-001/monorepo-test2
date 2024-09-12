@@ -15,6 +15,8 @@ const outDir = path.resolve(buildOutput, 'types')
 
 export const generateTypesDefinitions = async () => {
   const compilerOptions: CompilerOptions = {
+    allowJs: true,
+    declaration: true,
     emitDeclarationOnly: true,
     outDir,
     baseUrl: projRoot,

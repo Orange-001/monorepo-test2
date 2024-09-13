@@ -1,30 +1,5 @@
 import Affix from './src/affix.vue'
-import type { App } from 'vue'
-import type { AppContext, Plugin } from 'vue'
+import { withInstall } from '../../utils/index'
 
-export type SFCWithInstall<T> = T & Plugin
-
-export type SFCInstallWithContext<T> = SFCWithInstall<T> & {
-  _context: AppContext | null
-}
-
-export const withInstall = <T, E extends Record<string, any>>(
-  main: T,
-  extra?: E,
-) => {
-  ;(main as SFCWithInstall<T>).install = (app: App): void => {
-    for (const comp of [main, ...Object.values(extra ?? {})]) {
-      app.component(comp.name, comp)
-    }
-  }
-
-  if (extra) {
-    for (const [key, comp] of Object.entries(extra)) {
-      ;(main as any)[key] = comp
-    }
-  }
-  return main as SFCWithInstall<T> & E
-}
-
-export const ElAffix = withInstall(Affix)
-export default ElAffix
+export const MyAffix = withInstall(Affix)
+export default MyAffix

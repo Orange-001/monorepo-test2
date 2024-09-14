@@ -82,7 +82,7 @@ export const generateTypesDefinitions = async () => {
 async function addSourceFiles(project: Project) {
   const globSourceFile = '**/*.{js?(x),ts?(x),vue}'
   const filePaths = excludeFiles(
-    await glob([globSourceFile], {
+    await glob([globSourceFile, '!my-ui-lib/**/*'], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,

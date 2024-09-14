@@ -26,11 +26,7 @@
     "strict": true, //是否启动严格模式
     "skipLibCheck": true, //跳过类库检测(用来控制global.d.ts 不报错)
     "baseUrl": "./",
-    "noLib": false, // 不处理类库
-    "paths": {
-      "@packages/*": ["packages/rrz-web-design/packages/*"],
-      "@rrz-web-design/*": ["packages/rrz-web-design/packages/*"]
-    }
+    "noLib": false // 不处理类库
   },
   "exclude": ["node_modules", "**/_tests_", "dist/**"] // 排除掉那些类库
 }

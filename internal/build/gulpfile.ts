@@ -14,7 +14,7 @@ export default series(
 
   parallel(
     runTask('buildModules'),
-    // runTask('buildFullBundle'),
+    runTask('buildFullBundle'),
     runTask('generateTypesDefinitions'),
   ),
 )

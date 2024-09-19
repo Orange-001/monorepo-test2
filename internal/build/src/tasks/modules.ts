@@ -1,4 +1,4 @@
-import { rollup, OutputOptions, RollupBuild } from 'rollup'
+import { rollup, OutputOptions } from 'rollup'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
@@ -14,18 +14,17 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import chalk from 'chalk'
 import consola from 'consola'
-
-export const writeBundles = (bundle: RollupBuild, options: OutputOptions[]) => {
-  return Promise.all(options.map((option) => bundle.write(option)))
-}
+import { excludeFiles, generateExternal, writeBundles } from '../utils'
 
 export const buildModules = async () => {
-  const input = await glob('**/*.{js,ts,vue}', {
-    cwd: pkgRoot,
-    absolute: true,
-    onlyFiles: true,
-    // ignore: ['**/node_modules'],
-  })
+  const input = excludeFiles(
+    await glob('**/*.{js,ts,vue}', {
+      cwd: pkgRoot,
+      absolute: true,
+      onlyFiles: true,
+      // ignore: ['**/node_modules'],
+    }),
+  )
 
   const bundle = await rollup({
     input,
@@ -51,7 +50,8 @@ export const buildModules = async () => {
         },
       }),
     ],
-    external: [/node_modules/],
+    external: await generateExternal({ full: false }),
+    // external: [/node_modules/],
     treeshake: false,
   })
 

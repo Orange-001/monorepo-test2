@@ -7,3 +7,5 @@ export const buildRoot = resolve(projRoot, 'internal', 'build')
 
 export const buildOutput = resolve(projRoot, 'dist')
 export const myUiLibOutput = resolve(buildOutput, 'my-ui-lib')
+
+export const myUiLibPackage = resolve(myUiLibRoot, 'package.json')

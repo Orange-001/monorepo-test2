@@ -1,6 +1,5 @@
 import { PKG_NAME, PKG_PREFIX } from '../const'
 import { buildConfig } from '../build-info'
-import { projRoot } from '../utils'
 
 import type { Module } from '../build-info'
 
@@ -13,14 +12,4 @@ export const pathRewriter = (module: Module) => {
     id = id.replaceAll(`${PKG_PREFIX}/`, `${config.bundle.path}/`)
     return id
   }
-}
-
-export const excludeFiles = (files: string[]) => {
-  const excludes = ['node_modules', 'test', 'mock', 'gulpfile', 'dist']
-  return files.filter(
-    (path) =>
-      !excludes.some((exclude) =>
-        path.slice(projRoot.length).includes(exclude),
-      ),
-  )
 }

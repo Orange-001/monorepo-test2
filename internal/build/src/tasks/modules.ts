@@ -6,7 +6,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import postcss from 'rollup-plugin-postcss'
 import typescript from '@rollup/plugin-typescript'
 import { glob } from 'fast-glob'
-import { pkgRoot, projRoot } from '../utils/paths'
+import { myUiLibRoot, pkgRoot, projRoot } from '../utils/paths'
 import { buildConfigEntries, target } from '../build-info'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
@@ -18,7 +18,7 @@ import { excludeFiles, generateExternal, writeBundles } from '../utils'
 
 export const buildModules = async () => {
   const input = excludeFiles(
-    await glob('**/*.{js,ts,vue}', {
+    await glob(['**/*.{js,ts,vue}'], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,
@@ -63,7 +63,8 @@ export const buildModules = async () => {
         dir: config.output.path,
         exports: module === 'cjs' ? 'named' : undefined,
         preserveModules: true,
-        preserveModulesRoot: pkgRoot,
+        // myUiLibRoot路径下的文件输出目录为dir下
+        preserveModulesRoot: myUiLibRoot,
         sourcemap: true,
         entryFileNames: `[name].${config.ext}`,
       }

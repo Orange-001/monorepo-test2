@@ -26,7 +26,11 @@
     "strict": true, //是否启动严格模式
     "skipLibCheck": true, //跳过类库检测(用来控制global.d.ts 不报错)
     "baseUrl": "./",
-    "noLib": false // 不处理类库
+    "noLib": false, // 不处理类库
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "preserveSymlinks": true
   },
   "exclude": ["node_modules", "**/_tests_", "dist/**"] // 排除掉那些类库
 }

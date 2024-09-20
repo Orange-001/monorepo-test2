@@ -7,7 +7,7 @@ export const run = async (command: string, cwd: string = projRoot) =>
   new Promise<void>((resolve, reject) => {
     const [cmd, ...args] = command.split(' ')
     consola.info(`run: ${chalk.green(`${cmd} ${args.join(' ')}`)}`)
-    const app = spawn(cmd, args, {
+    const app = spawn(cmd as string, args, {
       cwd,
       stdio: 'inherit',
       shell: process.platform === 'win32',

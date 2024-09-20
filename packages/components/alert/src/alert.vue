@@ -1,9 +1,15 @@
 <template>
-  <div class="my-alert">alert</div>
+  <div class="my-alert">
+    <div>alert</div>
+    <div>text: {{ props.text }}</div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-defineProps()
+import { ALERT_PROPS_DEFAULTS } from './alert'
+import type { AlertProps } from './alert'
+
+const props = withDefaults(defineProps<AlertProps>(), ALERT_PROPS_DEFAULTS)
 </script>
 
 <style lang="less" scoped>

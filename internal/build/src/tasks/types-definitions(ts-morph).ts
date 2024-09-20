@@ -10,7 +10,7 @@ import { buildOutput, excludeFiles, pkgRoot, projRoot } from '../utils'
 import { pathRewriter } from '../utils'
 import type { CompilerOptions, SourceFile } from 'ts-morph'
 
-const TSCONFIG_PATH = path.resolve(projRoot, 'tsconfig.json')
+const TSCONFIG_PATH = path.resolve(projRoot, 'tsconfig.web.json')
 const outDir = path.resolve(buildOutput, 'types')
 
 export const generateTypesDefinitions = async () => {

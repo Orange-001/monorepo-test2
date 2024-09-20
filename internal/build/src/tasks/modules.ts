@@ -34,7 +34,7 @@ export const buildModules = async () => {
       }),
       vueJsx(),
       // typescript({
-      //   tsconfig: path.resolve(projRoot, 'tsconfig.json'),
+      //   tsconfig: path.resolve(projRoot, 'tsconfig.web.json'),
       // }),
       postcss({
         extract: true,

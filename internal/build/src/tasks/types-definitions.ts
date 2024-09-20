@@ -6,7 +6,7 @@ import { pathRewriter, run, buildOutput } from '../utils'
 
 export const generateTypesDefinitions = async () => {
   await run(
-    'npx vue-tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir dist/types',
+    'npx vue-tsc -p tsconfig.web.json --declaration --emitDeclarationOnly --declarationDir dist/types',
   )
   const typesDir = path.join(buildOutput, 'types', 'packages')
   const filePaths = await glob(`**/*.d.ts`, {

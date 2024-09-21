@@ -2,7 +2,7 @@ export type AffixProps = {
   content: string
 }
 
-export const AFFIX_PROPS_DEFAULTS: Partial<AffixProps> = {
+export const AffixPropsDefaults: Partial<AffixProps> = {
   content: '123',
 }
 

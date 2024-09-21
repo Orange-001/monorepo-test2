@@ -2,6 +2,6 @@ export type AlertProps = {
   text: string
 }
 
-export const ALERT_PROPS_DEFAULTS: Partial<AlertProps> = {
+export const AlertPropsDefaults: Partial<AlertProps> = {
   text: '456',
 }

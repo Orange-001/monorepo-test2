@@ -10,6 +10,7 @@ import {
 } from '../utils'
 import { Plugin, rollup } from 'rollup'
 import { PKG_BRAND_NAME, PKG_CAMELCASE_NAME } from '../const'
+import { MyUiLibAlias } from '../plugins/my-ui-lib-alias'
 
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
@@ -23,6 +24,7 @@ const banner = `/*! ${PKG_BRAND_NAME} */\n`
 
 async function buildFullEntry(minify: boolean) {
   const plugins: Plugin[] = [
+    MyUiLibAlias(),
     vue({
       isProduction: true,
     }),

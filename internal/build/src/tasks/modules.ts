@@ -11,6 +11,7 @@ import { buildConfigEntries, target } from '../build-info'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { MyUiLibAlias } from '../plugins/my-ui-lib-alias'
 
 import chalk from 'chalk'
 import consola from 'consola'
@@ -29,6 +30,7 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
+      MyUiLibAlias(),
       vue({
         isProduction: true,
       }),

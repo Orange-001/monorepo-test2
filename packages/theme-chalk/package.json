@@ -1,0 +1,12 @@
+{
+  "name": "theme-chalk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"theme-chalk/build\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

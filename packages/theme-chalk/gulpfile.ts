@@ -8,7 +8,9 @@ import rename from 'gulp-rename'
 import consola from 'consola'
 import postcss from 'postcss'
 import cssnano from 'cssnano'
-import { myUiLibOutput } from '/internal/build/src/utils'
+import { myUiLibOutput } from '../../internal/build/src/utils'
+import type Vinly from 'vinyl'
+import chalk from 'chalk'
 
 const distFolder = path.resolve(__dirname, 'dist')
 const distBundle = path.resolve(myUiLibOutput, 'theme-chalk')
@@ -33,7 +35,29 @@ function compressWithCssnano() {
   ])
 
   return new Transform({
-    //
+    objectMode: true,
+    transform(chunk, _encoding, callback) {
+      const file = chunk as Vinly
+      if (file.isNull()) {
+        callback(null, false)
+        return
+      }
+      if (file.isStream()) {
+        callback(new Error('Streaming not supported'))
+        return
+      }
+      const cssString = file.contents!.toString()
+      processor.process(cssString, { from: file.path }).then((result) => {
+        const name = path.basename(file.path)
+        file.contents = Buffer.from(result.css)
+        consola.success(
+          `${chalk.cyan(name)}: ${chalk.yellow(
+            cssString.length / 1000,
+          )} KB -> ${chalk.green(result.css.length / 1000)} KB`,
+        )
+        callback(null, file)
+      })
+    },
   })
 }
 
@@ -47,7 +71,7 @@ function buildThemeChalk() {
   const noMyPrefixFile = /(index|base|display)/
   return src(path.resolve(__dirname, 'src/*.less'))
     .pipe(less)
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(compressWithCssnano())
     .pipe(
       rename((path) => {

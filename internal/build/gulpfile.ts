@@ -3,12 +3,7 @@ import { copyFile, mkdir } from 'fs/promises'
 import { copy } from 'fs-extra'
 import { parallel, series } from 'gulp'
 import { buildConfig, run, runTask, withTaskName } from './src'
-import {
-  buildOutput,
-  myUiLibOutput,
-  myUiLibPackage,
-  projRoot,
-} from './src/utils'
+import { buildOutput, myUiLibOutput, myUiLibPackage, projRoot } from './src'
 
 import type { TaskFunction } from 'gulp'
 import type { Module } from './src'
@@ -37,6 +32,10 @@ export const copyTypesDefinitions: TaskFunction = (done) => {
 
 export const copyFullStyle = async () => {
   await mkdir(path.resolve(myUiLibOutput, 'dist'), { recursive: true })
+  await copyFile(
+    path.resolve(myUiLibOutput, 'theme-chalk/index.css'),
+    path.resolve(myUiLibOutput, 'dist/index.css'),
+  )
 }
 
 export default series(

@@ -1,6 +1,6 @@
 {
   "name": "my-ui-lib",
-  "version": "1.0.0",
+  "version": "0.0.0-dev.1",
   "description": "",
   "keywords": [],
   "author": "",
@@ -48,6 +48,17 @@
     },
     "./*": "./*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "style": "dist/index.css",
+  "sideEffects": [
+    "dist/*",
+    "theme-chalk/**/*.css",
+    "theme-chalk/src/**/*.scss",
+    "es/components/*/style/*",
+    "lib/components/*/style/*"
+  ],
   "license": "ISC",
   "peerDependencies": {
     "vue": ">=3.5.4"

@@ -9,5 +9,9 @@
 import { AlertPropsDefaults } from './alert'
 import type { AlertProps } from './alert'
 
+defineOptions({
+  name: 'MyAlert',
+})
+
 const props = withDefaults(defineProps<AlertProps>(), AlertPropsDefaults)
 </script>

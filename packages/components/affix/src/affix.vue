@@ -15,6 +15,9 @@ import { nextTick, ref } from 'vue'
 import { AffixPropsDefaults } from './affix'
 import type { AffixProps, AffixEmits } from './affix'
 
+defineOptions({
+  name: 'MyAffix',
+})
 const props = withDefaults(defineProps<AffixProps>(), AffixPropsDefaults)
 const emit = defineEmits<AffixEmits>()
 

@@ -32,9 +32,14 @@ const { theme, page, frontmatter } = useData()
 
 <script setup>
 import { useData } from 'vitepress'
+import MyAffix from './.vitepress/examples/affix/basic.vue'
+import MyAlert from './.vitepress/examples/alert/basic.vue'
 
 const { site, theme, page, frontmatter } = useData()
 </script>
+
+<MyAffix />
+<MyAlert />
 
 ## Results
 

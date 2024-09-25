@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-// import { mdPlugin } from './vp-plugins'
+import { mdPlugin } from './vp-plugins'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -26,7 +26,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
   },
-  // markdown: {
-  //   config: (md) => mdPlugin(md),
-  // },
+  markdown: {
+    config: (md) => mdPlugin(md),
+  },
 })

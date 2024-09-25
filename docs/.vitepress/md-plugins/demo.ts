@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import type { MarkdownRenderer } from 'vitepress'
-import { docRoot } from '../../../internal/build/src'
+import { docRoot } from '../../../internal/build/src/utils/paths'
 
 interface ContainerOpts {
   marker?: string | undefined

@@ -7,7 +7,7 @@
     "types": [],
     "skipLibCheck": true
   },
-  "include": ["packages", "typings/global.d.ts"],
+  "include": ["packages"],
   "exclude": [
     "node_modules",
     "**/dist",

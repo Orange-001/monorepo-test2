@@ -1,0 +1,9 @@
+<template>
+  <div>
+    this is basic myAlet example.
+    <MyAlert text="123" />
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+<style lang="less" scoped></style>

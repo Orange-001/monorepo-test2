@@ -18,15 +18,20 @@ export default defineConfig({
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Test', link: '/test' },
         ],
       },
     ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'npm', link: 'http://172.16.50.189:4873/' },
     ],
   },
   markdown: {
     config: (md) => mdPlugin(md),
+    image: {
+      lazyLoading: true,
+    },
   },
 })

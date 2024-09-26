@@ -58,3 +58,13 @@ const { site, theme, page, frontmatter } = useData()
 ## More
 
 Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+
+[Home](/)
+
+Affix is fixed at the top of the page by default.
+
+:::demo You can set `offset` attribute to change the offset top，the default value is 0.
+
+affix/basic
+
+:::

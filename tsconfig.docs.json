@@ -12,7 +12,7 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "lib": ["WebWorker"],
-    "types": ["./typings/global"],
+    "types": ["./typings/global", "vite/client"],
     "jsx": "preserve"
   },
   "include": ["docs", "docs/.vitepress/**/*"],

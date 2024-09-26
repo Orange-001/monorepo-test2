@@ -14,8 +14,11 @@ const globals: [string, Component][] = [['Demo', VPDemo]]
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
-    app.use(MyUiLib)
+    app.config.globalProperties.$exampleComponents = import.meta.glob(
+      '../examples/**/*.vue',
+    )
 
+    app.use(MyUiLib)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
     })

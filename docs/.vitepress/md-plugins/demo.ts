@@ -23,7 +23,7 @@ export const demoPlugin = (md: MarkdownRenderer): ContainerOpts => {
 
         if (sourceFileToken.type === 'inline') {
           source = fs.readFileSync(
-            path.resolve(docRoot, 'examples', `${sourceFile}.vue`),
+            path.resolve(docRoot, '.vitepress/examples', `${sourceFile}.vue`),
             'utf-8',
           )
         }

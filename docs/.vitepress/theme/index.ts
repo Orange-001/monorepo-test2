@@ -1,8 +1,14 @@
+import '../styles/css-var.less'
+import 'uno.css'
 import './custom.css'
-
-import MyUiLib from 'my-ui-lib'
+import 'my-ui-lib/dist/index.css'
+import 'element-plus/dist/index.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 import DefaultTheme from 'vitepress/theme'
+import MyUiLib from 'my-ui-lib'
+import ElementPlus from 'element-plus'
+import { useDark } from '@vueuse/core'
 
 import VPDemo from '../components/vp-demo.vue'
 
@@ -19,8 +25,13 @@ export default {
     )
 
     app.use(MyUiLib)
+    app.use(ElementPlus)
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)
+    })
+
+    useDark({
+      storageKey: 'vitepress-theme-appearance',
     })
   },
 } satisfies Theme

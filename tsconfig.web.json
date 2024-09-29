@@ -4,7 +4,7 @@
     "composite": true,
     "jsx": "preserve",
     "lib": ["ES2018", "DOM", "DOM.Iterable"],
-    "types": [],
+    "types": ["./env"],
     "skipLibCheck": true
   },
   "include": ["packages"],

@@ -1,4 +1,7 @@
 <template>
+  <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
+  <div text="sm" m="y-4" v-html="decodedDescription" />
+
   <div class="example">
     <div class="example-showcase">
       <component :is="exampleComponent"></component>
@@ -42,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { shallowRef, getCurrentInstance, onBeforeMount } from 'vue'
+import { computed, shallowRef, getCurrentInstance, onBeforeMount } from 'vue'
 import type { Component } from 'vue'
 
 const instance = getCurrentInstance()
@@ -73,6 +76,8 @@ function loadShowcaseComponent() {
     }
   })
 }
+
+const decodedDescription = computed(() => decodeURIComponent(props.description))
 </script>
 
 <style lang="less" scoped>

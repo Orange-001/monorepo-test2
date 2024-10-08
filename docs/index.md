@@ -3,25 +3,25 @@
 layout: home
 
 hero:
-  name: 'My Awesome Project'
-  text: 'A VitePress Site'
-  tagline: My great project tagline
+  name: '我的超棒项目'
+  text: '一个 VitePress 站点'
+  tagline: 我的优秀项目标语
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Markdown 示例
       link: /zh-CN/test/markdown-examples
     - theme: alt
-      text: API Examples
+      text: API 示例
       link: /zh-CN/test/api-examples
     - theme: alt
-      text: Components
+      text: 组件
       link: /zh-CN/components/overview
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 功能 A
+    details: 提供高效的开发工具，帮助你快速搭建网站
+  - title: 功能 B
+    details: 支持丰富的配置选项，灵活满足不同需求
+  - title: 功能 C
+    details: 轻量且性能优越，适合小型与大型项目
 ---

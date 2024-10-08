@@ -6,7 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
-import { nav } from './nav'
+import { getNav } from './nav'
 import { sidebar } from './sidebar'
 
 // https://vitepress.dev/reference/site-config
@@ -17,16 +17,21 @@ export default defineConfig({
   locales: {
     root: {
       label: 'Chinese',
-      lang: 'zh',
+      lang: 'zh-CN',
+      themeConfig: {
+        nav: getNav('zh-CN'),
+      },
     },
     'en-US': {
       label: 'en-US',
-      lang: 'en',
+      lang: 'en-US', // 可选，将作为 `lang` 属性添加到 `html` 标签中
+      themeConfig: {
+        nav: getNav('en-US'),
+      },
     },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav,
     sidebar,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
@@ -35,6 +40,7 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
+    i18nRouting: false,
   },
   markdown: {
     config: (md) => mdPlugin(md),

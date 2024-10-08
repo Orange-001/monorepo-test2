@@ -7,11 +7,15 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       link: '/zh-CN/components/overview',
     },
     {
-      text: '通用',
+      text: '基础组件',
       items: [
         {
           text: 'Affix 固钉',
           link: '/zh-CN/components/affix',
+        },
+        {
+          text: 'Button 按钮',
+          link: '/zh-CN/components/button',
         },
       ],
     },

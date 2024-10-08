@@ -17,6 +17,9 @@ pnpm i rollup --filter build
 pnpm run -r --parallel clean
 -r（--recursive）：递归地在所有子包（子项目）中执行命令
 --parallel：并行执行命令，而不是顺序执行
+5、pnpm link
+进入dist/my-ui-lib目录，执行pnpm link --global
+进入/根目录，执行pnpm link my-ui-lib --global
 
 Changesets
 1、添加变更集工具
@@ -30,7 +33,7 @@ npx changeset publish
 
 rimraf
 移除所有node_modules
-npx rimraf --glob "**/node_modules"
+npx rimraf --glob "\*\*/node_modules"
 
 Rollup
 npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript

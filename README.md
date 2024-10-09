@@ -18,8 +18,23 @@ pnpm run -r --parallel clean
 -r（--recursive）：递归地在所有子包（子项目）中执行命令
 --parallel：并行执行命令，而不是顺序执行
 5、pnpm link
+（1）本地调试方法一：
 链接：cd docs && pnpm link ../dist/my-ui-lib
 取消链接(pnpm unlink不生效)：cd docs && pnpm i
+（2）本地调试方法二：
+vite alias，引用本地路径。示例：
+resolve: {
+alias: [
+{
+find: /^element-plus(\/(es|lib))?$/,
+replacement: path.resolve(epRoot, 'index.ts'),
+},
+{
+find: /^element-plus\/(es|lib)\/(.*)$/,
+replacement: `${pkgRoot}/$2`,
+},
+],
+}
 
 Changesets
 1、添加变更集工具

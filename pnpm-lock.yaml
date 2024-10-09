@@ -55,6 +55,31 @@ importers:
         specifier: ^2.11.6
         version: 2.11.12(esbuild@0.23.1)(typescript@5.6.2)(vue@3.5.4)
 
+  dist/my-ui-lib:
+    dependencies:
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      lodash-unified:
+        specifier: ^1.0.3
+        version: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
+      monorepo-test2:
+        specifier: link:D:/Code/_MY/monorepo/monorepo-test2
+        version: link:../..
+      my-ui-lib:
+        specifier: link:D:/Code/_MY/monorepo/monorepo-test2/docs/node_modules/my-ui-lib
+        version: link:../../docs/node_modules/my-ui-lib
+    devDependencies:
+      vue:
+        specifier: ^3.5.4
+        version: 3.5.4
+      vue-router:
+        specifier: ^4.4.5
+        version: 4.4.5(vue@3.5.4)
+
   docs:
     dependencies:
       '@vueuse/core':
@@ -65,7 +90,7 @@ importers:
         version: 2.8.3(vue@3.5.4)
       my-ui-lib:
         specifier: latest
-        version: 0.0.0-dev.1(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4)
+        version: link:../dist/my-ui-lib
       unocss:
         specifier: ^0.63.1
         version: 0.63.1(postcss@8.4.45)(vite@5.4.4)
@@ -2900,7 +2925,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.5.4
       '@vue/shared': 3.5.4
-      vue: 3.5.4(typescript@5.6.2)
+      vue: 3.5.4
 
   /@vue/shared@3.5.4:
     resolution: {integrity: sha512-L2MCDD8l7yC62Te5UUyPVpmexhL9ipVnYRw9CsWfm/BGRL5FwDX4a25bcJ/OJSD3+Hx+k/a8LDKcG2AFdJV3BA==}
@@ -5216,20 +5241,6 @@ packages:
     engines: {node: '>= 10.13.0'}
     dev: false
 
-  /my-ui-lib@0.0.0-dev.1(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4):
-    resolution: {integrity: sha512-+/HLUhCKAAwYyZTMQmyMDCD82/x4yZrvkem32YFgaUjkFrrEMsd4W3nUxIS89xZi850kjPBEw1YnXW9ECC9RWw==}
-    peerDependencies:
-      vue: '>=3.5.4'
-    dependencies:
-      dayjs: 1.11.13
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
-      vue: 3.5.4(typescript@5.6.2)
-    transitivePeerDependencies:
-      - '@types/lodash-es'
-      - lodash
-    dev: false
-
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -7339,7 +7350,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.6.4
-      vue: 3.5.4(typescript@5.6.2)
+      vue: 3.5.4
     dev: true
 
   /vue-tsc@2.1.6(typescript@5.6.2):
@@ -7353,6 +7364,20 @@ packages:
       semver: 7.6.3
       typescript: 5.6.2
     dev: false
+
+  /vue@3.5.4:
+    resolution: {integrity: sha512-3yAj2gkmiY+i7+22A1PWM+kjOVXjU74UPINcTiN7grIVPyFFI0lpGwHlV/4xydDmobaBn7/xmi+YG8HeSlCTcg==}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/compiler-dom': 3.5.4
+      '@vue/compiler-sfc': 3.5.4
+      '@vue/runtime-dom': 3.5.4
+      '@vue/server-renderer': 3.5.4(vue@3.5.4)
+      '@vue/shared': 3.5.4
 
   /vue@3.5.4(typescript@5.6.2):
     resolution: {integrity: sha512-3yAj2gkmiY+i7+22A1PWM+kjOVXjU74UPINcTiN7grIVPyFFI0lpGwHlV/4xydDmobaBn7/xmi+YG8HeSlCTcg==}

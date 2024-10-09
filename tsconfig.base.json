@@ -19,7 +19,8 @@
     "noImplicitAny": false,
     "paths": {
       "@my-ui-lib/*": ["packages/*"],
-      "my-ui-lib": ["packages/my-ui-lib"]
+      "my-ui-lib": ["packages/my-ui-lib"],
+      "~/*": ["./docs/.vitepress/*"]
     },
     "preserveSymlinks": true
   }

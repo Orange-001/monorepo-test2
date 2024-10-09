@@ -12,9 +12,6 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "lib": ["WebWorker"],
-    "paths": {
-      "~/*": ["./docs/.vitepress/*"]
-    },
     "types": [
       "./typings/global",
       "element-plus/global",

@@ -55,6 +55,11 @@ export default defineConfig({
           find: '~/',
           replacement: `${path.resolve(__dirname, '../../.vitepress')}/`,
         },
+        // 本地调试组件时使用
+        {
+          find: /^@my-ui-lib/,
+          replacement: `${path.resolve(__dirname, '../../../packages')}`,
+        },
       ],
     },
     plugins: [

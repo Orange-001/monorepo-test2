@@ -41,6 +41,9 @@ export default defineConfig({
       provider: 'local',
     },
     i18nRouting: false,
+    outline: {
+      level: [2, 3],
+    },
   },
   markdown: {
     config: (md) => mdPlugin(md),

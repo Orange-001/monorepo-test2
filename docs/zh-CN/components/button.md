@@ -18,3 +18,18 @@ button/basic
 button/disabled
 
 :::
+
+## Button API
+
+### Button 属性
+
+| 属性名   | 说明               | 类型                                                      | 默认值 |
+| -------- | ------------------ | --------------------------------------------------------- | ------ |
+| type     | 类型               | `primary` \| `success` \| `warning` \| `danger` \| `info` | —      |
+| disabled | 按钮是否为禁用状态 | `boolean`                                                 | false  |
+
+### Button 插槽
+
+| 插槽名  | 说明           |
+| ------- | -------------- |
+| default | 自定义默认内容 |

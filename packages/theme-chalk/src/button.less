@@ -1,3 +1,43 @@
 .my-button {
-  color: yellow;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 32px;
+  line-height: 1;
+  cursor: pointer;
+  &.disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  &-primary {
+    background-color: #409eff;
+    &.my-button-disabled {
+      background-color: #2a598a;
+    }
+  }
+  &-success {
+    background-color: #67c23a;
+    &.my-button-disabled {
+      background-color: #3e6b27;
+    }
+  }
+  &-warning {
+    background-color: #6b6d71;
+    &.my-button-disabled {
+      background-color: #525457;
+    }
+  }
+  &-danger {
+    background-color: #e6a23c;
+    &.my-button-disabled {
+      background-color: #7d5b28;
+    }
+  }
+  &-info {
+    background-color: #f46c6c;
+    &.my-button-disabled {
+      background-color: #854040;
+    }
+  }
 }

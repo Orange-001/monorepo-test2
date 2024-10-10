@@ -1,11 +1,9 @@
 export type ButtonProps = {
-  content: string
+  type?: 'primary' | 'success' | 'warning' | 'danger' | 'info'
+  disabled?: boolean
 }
 
 export const ButtonPropsDefaults: Partial<ButtonProps> = {
-  content: '123',
-}
-
-export type ButtonEmits = {
-  update: [content: string]
+  type: 'primary',
+  disabled: false,
 }

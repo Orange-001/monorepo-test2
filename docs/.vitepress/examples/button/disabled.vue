@@ -1,11 +1,11 @@
 <template>
   <div>
     <ElSpace :size="12" wrap class="mb-4">
-      <MyButton>Primary</MyButton>
-      <MyButton type="success">Success</MyButton>
-      <MyButton type="warning">Warning</MyButton>
-      <MyButton type="danger">Danger</MyButton>
-      <MyButton type="info">Info</MyButton>
+      <MyButton disabled>Primary</MyButton>
+      <MyButton type="success" disabled>Success</MyButton>
+      <MyButton type="warning" disabled>Warning</MyButton>
+      <MyButton type="danger" disabled>Danger</MyButton>
+      <MyButton type="info" disabled>Info</MyButton>
     </ElSpace>
   </div>
 </template>

@@ -7,46 +7,61 @@
       <component :is="exampleComponent"></component>
     </div>
 
-    <div class="example-source-wrapper">
-      <div class="example-source" v-html="decodeURIComponent(source)"></div>
-    </div>
+    <ElDivider class="!m-0" />
 
     <div class="op-btns">
       <ElTooltip
-        content="Edit in Playground"
+        content="在Playground中编辑"
         :show-arrow="false"
         :trigger="['hover', 'focus']"
       >
         <i-ri-flask-line class="op-btn" />
       </ElTooltip>
       <ElTooltip
-        content="Edit on GitHub"
+        content="在GitHub中编辑"
         :show-arrow="false"
         :trigger="['hover', 'focus']"
       >
-        <i-ri-github-line class="op-btn" />
+        <a
+          :href="`https://github.com/Orange-001/monorepo-test2/edit/main/docs/.vitepress/examples/${path}.vue`"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <i-ri-github-line class="op-btn" />
+        </a>
       </ElTooltip>
       <ElTooltip
-        content="Copy code"
+        content="复制代码"
         :show-arrow="false"
         :trigger="['hover', 'focus']"
       >
-        <i-ri-flask-line class="op-btn" />
+        <i-ri-file-copy-line class="op-btn" @click="copyCode" />
       </ElTooltip>
       <ElTooltip
-        content="View source"
+        content="查看源代码"
         :show-arrow="false"
         :trigger="['hover', 'focus']"
       >
-        <i-ri-code-line class="op-btn" />
+        <i-ri-code-line
+          class="op-btn"
+          @click="toggleSourceVisible(!sourceVisible)"
+        />
       </ElTooltip>
     </div>
+
+    <ElCollapseTransition>
+      <div class="example-source-wrapper" v-show="sourceVisible">
+        <div class="example-source" v-html="decodeURIComponent(source)"></div>
+      </div>
+    </ElCollapseTransition>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, shallowRef, getCurrentInstance, onBeforeMount } from 'vue'
+import { useClipboard, useToggle } from '@vueuse/core'
 import type { Component } from 'vue'
+import { ElMessage } from 'element-plus'
 
 const instance = getCurrentInstance()
 const props = defineProps<{
@@ -78,6 +93,25 @@ function loadShowcaseComponent() {
 }
 
 const decodedDescription = computed(() => decodeURIComponent(props.description))
+
+const [sourceVisible, toggleSourceVisible] = useToggle()
+
+const { copy, isSupported } = useClipboard({
+  source: decodeURIComponent(props.rawSource),
+  read: false,
+})
+
+async function copyCode() {
+  if (!isSupported.value) {
+    ElMessage.error('复制失败')
+  }
+  try {
+    await copy()
+    ElMessage.success('复制成功')
+  } catch (error: any) {
+    ElMessage.error(error.message)
+  }
+}
 </script>
 
 <style lang="less" scoped>

@@ -34,8 +34,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     sidebar,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-      { icon: 'npm', link: 'http://172.16.50.189:4873/' },
+      { icon: 'github', link: 'https://github.com/Orange-001/monorepo-test2' },
+      { icon: 'npm', link: 'http://localhost:4873/' },
     ],
     search: {
       provider: 'local',

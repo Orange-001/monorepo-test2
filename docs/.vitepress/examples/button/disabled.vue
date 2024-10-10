@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ElSpace :size="12" wrap class="mb-4">
+    <ElSpace :size="12" wrap>
       <MyButton disabled>Primary</MyButton>
       <MyButton type="success" disabled>Success</MyButton>
       <MyButton type="warning" disabled>Warning</MyButton>

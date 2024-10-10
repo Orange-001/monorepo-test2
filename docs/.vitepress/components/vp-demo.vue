@@ -104,6 +104,7 @@ const { copy, isSupported } = useClipboard({
 async function copyCode() {
   if (!isSupported.value) {
     ElMessage.error('复制失败')
+    return
   }
   try {
     await copy()

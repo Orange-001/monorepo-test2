@@ -11,7 +11,7 @@
     "strict": true,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "lib": ["WebWorker"],
+    "lib": ["WebWorker", "DOM", "ESNext"],
     "types": [
       "./typings/global",
       "element-plus/global",
@@ -20,6 +20,6 @@
     ],
     "jsx": "preserve"
   },
-  "include": ["docs", "docs/.vitepress/**/*"],
+  "include": ["docs", "docs/.vitepress/**/*", "playground"],
   "exclude": ["node_modules"]
 }

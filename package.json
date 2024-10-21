@@ -14,7 +14,8 @@
     "docs:build": "pnpm run -C docs build",
     "docs:preview": "pnpm run -C docs preview",
     "docs:link": "cd ./docs && pnpm link ../dist/my-ui-lib",
-    "docs:unlink": "cd ./docs && pnpm i"
+    "docs:unlink": "cd ./docs && pnpm i",
+    "playground:dev": "pnpm run -C playground dev"
   },
   "type": "module",
   "keywords": [],

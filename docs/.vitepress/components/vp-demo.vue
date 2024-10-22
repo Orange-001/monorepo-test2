@@ -15,7 +15,7 @@
         :show-arrow="false"
         :trigger="['hover', 'focus']"
       >
-        <i-ri-flask-line class="op-btn" />
+        <i-ri-flask-line class="op-btn" @click="onPlaygroundClick" />
       </ElTooltip>
       <ElTooltip
         content="在GitHub中编辑"
@@ -59,7 +59,7 @@
 
 <script setup lang="ts">
 import { computed, shallowRef, getCurrentInstance, onBeforeMount } from 'vue'
-import { useClipboard, useToggle } from '@vueuse/core'
+import { isClient, useClipboard, useToggle } from '@vueuse/core'
 import type { Component } from 'vue'
 import { ElMessage } from 'element-plus'
 
@@ -93,6 +93,18 @@ function loadShowcaseComponent() {
 }
 
 const decodedDescription = computed(() => decodeURIComponent(props.description))
+
+const onPlaygroundClick = () => {
+  const code = decodeURIComponent(props.rawSource)
+  const originCode = {
+    ['src/App.vue']: code,
+  }
+
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(originCode))))
+  const link = `http://localhost:5174/#${encoded}`
+  if (!isClient) return
+  window.open(link)
+}
 
 const [sourceVisible, toggleSourceVisible] = useToggle()
 

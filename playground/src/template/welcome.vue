@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { MyAffix } from 'my-ui-lib'
+// import { MyAffix } from 'my-ui-lib'
 
 const msg = ref('Hello World!')
 </script>

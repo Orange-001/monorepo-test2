@@ -9,10 +9,11 @@ import {
 } from '@vue/repl'
 import Monaco from '@vue/repl/monaco-editor'
 import welcomeCode from './template/welcome.vue?raw'
+import tsconfigCode from './template/tsconfig.json?raw'
 import mainCode from './template/main.vue?raw'
 import myUiLibCode from './template/my-ui-lib?raw'
 
-const { importMap: builtinImportMap } = useVueImportMap({
+const { importMap: builtinImportMap, vueVersion } = useVueImportMap({
   runtimeDev: import.meta.env.PROD
     ? undefined
     : `${location.origin}/src/vue-dev-proxy`,
@@ -28,6 +29,7 @@ const storeState: Partial<StoreState> = toRefs(
         'my-ui-lib/': '/node_modules/my-ui-lib/',
       },
     }),
+    vueVersion,
   }),
 )
 const store = useStore(storeState, location.hash)
@@ -42,6 +44,7 @@ async function init() {
     'src/App.vue': welcomeCode,
     'src/my-ui-lib.ts': myUiLibCode,
     'src/main.vue': mainCode,
+    'tsconfig.json': tsconfigCode,
   }
   for (const filename in files) {
     let newFilename = filename

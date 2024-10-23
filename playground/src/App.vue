@@ -25,6 +25,7 @@ const storeState: Partial<StoreState> = toRefs(
     builtinImportMap: mergeImportMap(builtinImportMap.value, {
       imports: {
         'my-ui-lib': '/node_modules/my-ui-lib/dist/index.full.min.mjs',
+        'my-ui-lib/': '/node_modules/my-ui-lib/',
       },
     }),
   }),

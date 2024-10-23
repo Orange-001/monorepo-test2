@@ -1,3 +1,4 @@
+import 'my-ui-lib/dist/index.css'
 import MyUiLib from 'my-ui-lib'
 import { getCurrentInstance } from 'vue'
 

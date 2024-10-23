@@ -34,14 +34,26 @@ const store = useStore(storeState, location.hash)
 watchEffect(() => history.replaceState({}, '', store.serialize()))
 
 async function init() {
-  await store.setFiles(
-    {
-      'src/App.vue': welcomeCode,
-      'src/my-ui-lib.ts': myUiLibCode,
-      'src/main.vue': mainCode,
-    },
-    'src/main.vue',
-  )
+  const serializedState = location.hash.slice(1)
+  serializedState && store.deserialize(serializedState)
+
+  const files = store.getFiles()
+  const newFiles: Record<string, string> = {
+    'src/App.vue': welcomeCode,
+    'src/my-ui-lib.ts': myUiLibCode,
+    'src/main.vue': mainCode,
+  }
+  for (const filename in files) {
+    let newFilename = filename
+    if (
+      !['import-map.json', 'tsconfig.json'].includes(filename) &&
+      !filename.startsWith('src/')
+    ) {
+      newFilename = `src/${filename}`
+    }
+    newFiles[newFilename] = files[filename]
+  }
+  await store.setFiles(newFiles, 'src/main.vue')
   store.files['src/main.vue'].hidden = true
   store.files['src/my-ui-lib.ts'].hidden = true
   store.activeFilename = 'src/App.vue'

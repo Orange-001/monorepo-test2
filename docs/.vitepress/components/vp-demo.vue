@@ -97,7 +97,7 @@ const decodedDescription = computed(() => decodeURIComponent(props.description))
 const onPlaygroundClick = () => {
   const code = decodeURIComponent(props.rawSource)
   const originCode = {
-    ['src/App.vue']: code,
+    ['App.vue']: code,
   }
 
   const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(originCode))))

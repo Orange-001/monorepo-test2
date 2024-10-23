@@ -16,10 +16,10 @@ import myUiLibCode from './template/my-ui-lib?raw'
 const { importMap: builtinImportMap, vueVersion } = useVueImportMap({
   runtimeDev: import.meta.env.PROD
     ? undefined
-    : `${location.origin}/src/vue-dev-proxy`,
+    : `${location.origin}/src/proxy/vue-dev-proxy`,
   serverRenderer: import.meta.env.PROD
     ? undefined
-    : `${location.origin}/src/vue-server-renderer-dev-proxy`,
+    : `${location.origin}/src/proxy/vue-server-renderer-dev-proxy`,
 })
 const storeState: Partial<StoreState> = toRefs(
   reactive({

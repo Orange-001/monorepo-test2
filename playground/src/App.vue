@@ -10,8 +10,16 @@ import {
 import Monaco from '@vue/repl/monaco-editor'
 import welcomeCode from './template/welcome.vue?raw'
 import tsconfigCode from './template/tsconfig.json?raw'
-import mainCode from './template/main.vue?raw'
-import myUiLibCode from './template/my-ui-lib?raw'
+
+const previewOptions = {
+  customCode: {
+    importCode: `
+      import 'my-ui-lib/dist/index.css';
+      import MyUiLib from 'my-ui-lib';
+    `,
+    useCode: `app.use(MyUiLib)`,
+  },
+}
 
 const { importMap: builtinImportMap, vueVersion } = useVueImportMap({
   runtimeDev: import.meta.env.PROD
@@ -42,8 +50,6 @@ async function init() {
   const files = store.getFiles()
   const newFiles: Record<string, string> = {
     'src/App.vue': welcomeCode,
-    'src/my-ui-lib.ts': myUiLibCode,
-    'src/main.vue': mainCode,
     'tsconfig.json': tsconfigCode,
   }
   for (const filename in files) {
@@ -56,10 +62,7 @@ async function init() {
     }
     newFiles[newFilename] = files[filename]
   }
-  await store.setFiles(newFiles, 'src/main.vue')
-  store.files['src/main.vue'].hidden = true
-  store.files['src/my-ui-lib.ts'].hidden = true
-  store.activeFilename = 'src/App.vue'
+  await store.setFiles(newFiles, 'src/App.vue')
 }
 
 init()
@@ -73,5 +76,6 @@ init()
     theme="dark"
     :preview-theme="true"
     :clear-console="false"
+    :preview-options="previewOptions"
   />
 </template>

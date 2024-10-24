@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@vue/repl": "^4.4.2",
-    "monaco-editor": "^0.52.0",
     "my-ui-lib": "0.0.0-dev.1",
     "vue": "^3.5.11"
   },

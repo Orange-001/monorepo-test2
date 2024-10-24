@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@vue/repl": "^4.4.2",
-    "my-ui-lib": "0.0.0-dev.1",
+    "element-plus": "^2.8.3",
+    "my-ui-lib": "latest",
     "vue": "^3.5.11"
   },
   "devDependencies": {

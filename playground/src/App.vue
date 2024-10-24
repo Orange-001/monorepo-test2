@@ -15,9 +15,15 @@ const previewOptions = {
   customCode: {
     importCode: `
       import 'my-ui-lib/dist/index.css';
+      import 'element-plus/dist/index.css';
       import MyUiLib from 'my-ui-lib';
+      import 'element-plus/theme-chalk/dark/css-vars.css';
+      import ElementPlus from 'element-plus';
     `,
-    useCode: `app.use(MyUiLib)`,
+    useCode: `
+      app.use(MyUiLib);
+      app.use(ElementPlus);
+    `,
   },
 }
 
@@ -33,8 +39,13 @@ const storeState: Partial<StoreState> = toRefs(
   reactive({
     builtinImportMap: mergeImportMap(builtinImportMap.value, {
       imports: {
+        'element-plus': '/node_modules/element-plus/dist/index.full.min.mjs',
+        'element-plus/': '/node_modules/element-plus/',
         'my-ui-lib': '/node_modules/my-ui-lib/dist/index.full.min.mjs',
         'my-ui-lib/': '/node_modules/my-ui-lib/',
+        '@my-ui-lib/my-ui-lib':
+          '/node_modules/my-ui-lib/dist/index.full.min.mjs',
+        '@my-ui-lib/': '/node_modules/my-ui-lib/',
       },
     }),
     vueVersion,

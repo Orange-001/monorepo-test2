@@ -214,6 +214,9 @@ importers:
 
   playground:
     dependencies:
+      '@unocss/transformer-directives':
+        specifier: ^0.63.6
+        version: 0.63.6
       '@vue/repl':
         specifier: ^4.4.2
         version: 4.4.2
@@ -223,6 +226,9 @@ importers:
       my-ui-lib:
         specifier: latest
         version: 0.0.0-dev.2(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))
+      unocss:
+        specifier: ^0.63.1
+        version: 0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
       vue:
         specifier: ^3.5.11
         version: 3.5.11(typescript@5.5.4)
@@ -1374,6 +1380,9 @@ packages:
   '@unocss/core@0.63.1':
     resolution: {integrity: sha512-scg53c6vw8cRsX4DbUO+MlTXicA9GWztm6PW0lsisJxXrdbQQCd+J+PIhrxLUExxeNqxTKsL3Msy9bwJU5uUsQ==}
 
+  '@unocss/core@0.63.6':
+    resolution: {integrity: sha512-Q4QPgJ271Up89+vIqqOKgtdCKkFpHqvHN8W1LUlKPqtYnOvVYaOIVNAZowaIdEhPuc83yLc6Tg2+7riK18QKEw==}
+
   '@unocss/extractor-arbitrary-variants@0.63.1':
     resolution: {integrity: sha512-yqHDUgFCR4R2HMuD2k4dVkkdT2uOa/gUDIY6xoseOx1r98Fxlyvdr0UnLOaWsSSzpSGm7SS7XtafGa24IgJRUQ==}
 
@@ -1417,6 +1426,10 @@ packages:
     resolution: {integrity: sha512-z7WQ8lKq7p6sS/6Yl1pStcA2WyxxD7H1i86iXa2orWayW8KtrIJbdCXFYEsj3sOkMKLqpG5w65P+103dO2jUhQ==}
     engines: {node: '>=14'}
 
+  '@unocss/rule-utils@0.63.6':
+    resolution: {integrity: sha512-moeDEq5d9mB8gSYeoqHMkXWWekaFFdhg7QCuwwCbxCc+NPMOgGkmfAoafz+y2tdvK7pEuT191RWOiHQ0MkA5oQ==}
+    engines: {node: '>=14'}
+
   '@unocss/transformer-attributify-jsx@0.63.1':
     resolution: {integrity: sha512-c92pv9x6AZ3Zfw5ledP6rzTudWUvVY5HrVSaG3GxO2ofyCFEdHyJ1qLTK7omwnTJZ3rMJ3QplIrPJka1Ftasuw==}
 
@@ -1425,6 +1438,9 @@ packages:
 
   '@unocss/transformer-directives@0.63.1':
     resolution: {integrity: sha512-mWVcQqVXj5OtUzfwc9B2/CRPYVHqkoj+AFfhU8RZ6e1nPgDKtR9JLt0jypTvv/PMo56vPJUTbpBBvXU+vvQwQA==}
+
+  '@unocss/transformer-directives@0.63.6':
+    resolution: {integrity: sha512-XcNOwLRbfrJSU6YXyLgiMzAigSzjIdvHwS3lLCZ2n6DWuLmTuXBfvVtRxeJ+aflNkhpQNKONCClC4s6I2r53uw==}
 
   '@unocss/transformer-variant-group@0.63.1':
     resolution: {integrity: sha512-Awk9FDpvZM8m9YY46MThYYZ81fY6HVs4pOX22xcbw06J2l8z3WyG5iHIzx0f8vCTNwTekDuxD6vV3UlQKoI+0w==}
@@ -5367,6 +5383,17 @@ snapshots:
       - rollup
       - supports-color
 
+  '@unocss/astro@0.63.1(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))':
+    dependencies:
+      '@unocss/core': 0.63.1
+      '@unocss/reset': 0.63.1
+      '@unocss/vite': 0.63.1(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
+    optionalDependencies:
+      vite: 5.4.9(@types/node@20.16.11)(less@4.2.0)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+
   '@unocss/cli@0.63.1(rollup@4.21.3)':
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -5394,6 +5421,8 @@ snapshots:
       - supports-color
 
   '@unocss/core@0.63.1': {}
+
+  '@unocss/core@0.63.6': {}
 
   '@unocss/extractor-arbitrary-variants@0.63.1':
     dependencies:
@@ -5469,6 +5498,11 @@ snapshots:
       '@unocss/core': 0.63.1
       magic-string: 0.30.11
 
+  '@unocss/rule-utils@0.63.6':
+    dependencies:
+      '@unocss/core': 0.63.6
+      magic-string: 0.30.11
+
   '@unocss/transformer-attributify-jsx@0.63.1':
     dependencies:
       '@unocss/core': 0.63.1
@@ -5481,6 +5515,12 @@ snapshots:
     dependencies:
       '@unocss/core': 0.63.1
       '@unocss/rule-utils': 0.63.1
+      css-tree: 3.0.0
+
+  '@unocss/transformer-directives@0.63.6':
+    dependencies:
+      '@unocss/core': 0.63.6
+      '@unocss/rule-utils': 0.63.6
       css-tree: 3.0.0
 
   '@unocss/transformer-variant-group@0.63.1':
@@ -5498,6 +5538,21 @@ snapshots:
       magic-string: 0.30.11
       tinyglobby: 0.2.6
       vite: 5.4.4(@types/node@22.5.4)(less@4.2.0)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+
+  '@unocss/vite@0.63.1(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))':
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@rollup/pluginutils': 5.1.2(rollup@4.21.3)
+      '@unocss/config': 0.63.1
+      '@unocss/core': 0.63.1
+      '@unocss/inspector': 0.63.1
+      chokidar: 3.6.0
+      magic-string: 0.30.11
+      tinyglobby: 0.2.6
+      vite: 5.4.9(@types/node@20.16.11)(less@4.2.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -8494,6 +8549,32 @@ snapshots:
       '@unocss/vite': 0.63.1(rollup@4.21.3)(vite@5.4.4(@types/node@22.5.4)(less@4.2.0))
     optionalDependencies:
       vite: 5.4.4(@types/node@22.5.4)(less@4.2.0)
+    transitivePeerDependencies:
+      - postcss
+      - rollup
+      - supports-color
+
+  unocss@0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0)):
+    dependencies:
+      '@unocss/astro': 0.63.1(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
+      '@unocss/cli': 0.63.1(rollup@4.21.3)
+      '@unocss/core': 0.63.1
+      '@unocss/postcss': 0.63.1(postcss@8.4.47)
+      '@unocss/preset-attributify': 0.63.1
+      '@unocss/preset-icons': 0.63.1
+      '@unocss/preset-mini': 0.63.1
+      '@unocss/preset-tagify': 0.63.1
+      '@unocss/preset-typography': 0.63.1
+      '@unocss/preset-uno': 0.63.1
+      '@unocss/preset-web-fonts': 0.63.1
+      '@unocss/preset-wind': 0.63.1
+      '@unocss/transformer-attributify-jsx': 0.63.1
+      '@unocss/transformer-compile-class': 0.63.1
+      '@unocss/transformer-directives': 0.63.1
+      '@unocss/transformer-variant-group': 0.63.1
+      '@unocss/vite': 0.63.1(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
+    optionalDependencies:
+      vite: 5.4.9(@types/node@20.16.11)(less@4.2.0)
     transitivePeerDependencies:
       - postcss
       - rollup

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, toRefs, watchEffect } from 'vue'
+import { reactive, toRefs, ref, watchEffect } from 'vue'
 import {
   mergeImportMap,
   Repl,
@@ -10,8 +10,20 @@ import {
 import Monaco from '@vue/repl/monaco-editor'
 import welcomeCode from './template/welcome.vue?raw'
 import tsconfigCode from './template/tsconfig.json?raw'
+import Header from './components/Header.vue'
+
+const replRef = ref<InstanceType<typeof Repl>>()
 
 const previewOptions = {
+  headHTML: `
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"><\/script>
+    <script>
+      window.__unocss = {
+        rules: [],
+        presets: [],
+      }
+    <\/script>
+  `,
   customCode: {
     importCode: `
       import 'my-ui-lib/dist/index.css';
@@ -77,16 +89,48 @@ async function init() {
 }
 
 init()
+
+const refreshPreview = () => {
+  replRef.value?.reload()
+}
 </script>
 
 <template>
-  <Repl
-    ref="replRef"
-    :store="store"
-    :editor="Monaco"
-    theme="dark"
-    :preview-theme="true"
-    :clear-console="false"
-    :preview-options="previewOptions"
-  />
+  <div>
+    <Header :store="store" @refresh="refreshPreview" />
+    <Repl
+      ref="replRef"
+      :store="store"
+      :editor="Monaco"
+      theme="dark"
+      :preview-theme="true"
+      :clear-console="false"
+      :preview-options="previewOptions"
+    />
+  </div>
 </template>
+
+<style>
+body {
+  --at-apply: m-none text-13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --base: #444;
+  --nav-height: 50px;
+}
+
+.vue-repl {
+  height: calc(100vh - var(--nav-height)) !important;
+}
+
+/**
+.dark .vue-repl,
+.vue-repl {
+  --color-branding: var(--el-color-primary) !important;
+}
+
+.dark body {
+  background-color: #1a1a1a;
+}
+*/
+</style>

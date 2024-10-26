@@ -11,9 +11,11 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@unocss/transformer-directives": "^0.63.6",
     "@vue/repl": "^4.4.2",
     "element-plus": "^2.8.3",
     "my-ui-lib": "latest",
+    "unocss": "^0.63.1",
     "vue": "^3.5.11"
   },
   "devDependencies": {

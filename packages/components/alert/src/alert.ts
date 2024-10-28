@@ -1,7 +1,11 @@
 export type AlertProps = {
-  text: string
+  title?: string
+  type?: 'success' | 'warning' | 'info' | 'error'
+  closable?: boolean
+  showIcon?: boolean
 }
 
 export const AlertPropsDefaults: Partial<AlertProps> = {
-  text: '456',
+  type: 'info',
+  closable: true,
 }

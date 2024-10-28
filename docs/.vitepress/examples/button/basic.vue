@@ -15,4 +15,4 @@
 import { MyButton } from '@my-ui-lib/my-ui-lib'
 import '@my-ui-lib/theme-chalk/src/button.less'
 </script>
-<style lang="less" scoped></style>
+<style scoped></style>

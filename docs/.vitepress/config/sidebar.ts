@@ -3,15 +3,15 @@ import type { DefaultTheme } from 'vitepress'
 export const sidebar: DefaultTheme.Config['sidebar'] = {
   '/zh-CN/components/': [
     {
-      text: '组件总览',
+      text: 'Overview 组件总览',
       link: '/zh-CN/components/overview',
     },
     {
-      text: '基础组件',
+      text: 'Basic 基础组件',
       items: [
         {
-          text: 'Affix 固钉',
-          link: '/zh-CN/components/affix',
+          text: 'Alert 提示',
+          link: '/zh-CN/components/alert',
         },
         {
           text: 'Button 按钮',
@@ -34,8 +34,12 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       text: 'Basic',
       items: [
         {
-          text: 'Affix',
-          link: '/en-US/components/affix',
+          text: 'Alert',
+          link: '/zh-CN/components/alert',
+        },
+        {
+          text: 'Button',
+          link: '/zh-CN/components/button',
         },
       ],
     },

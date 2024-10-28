@@ -9,12 +9,16 @@ import DefaultTheme from 'vitepress/theme'
 import MyUiLib from 'my-ui-lib'
 import ElementPlus from 'element-plus'
 
+import Overview from '../components/globals/overview.vue'
 import VPDemo from '../components/vp-demo.vue'
 
 import type { Theme } from 'vitepress'
 import type { Component } from 'vue'
 
-const globals: [string, Component][] = [['Demo', VPDemo]]
+const globals: [string, Component][] = [
+  ['Demo', VPDemo],
+  ['Overview', Overview],
+]
 
 export default {
   extends: DefaultTheme,

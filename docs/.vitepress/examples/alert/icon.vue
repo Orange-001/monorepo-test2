@@ -1,9 +1,9 @@
 <template>
   <div style="max-width: 600px">
-    <my-alert title="Success alert" :closable="false" type="success" />
-    <my-alert title="Info alert" :closable="false" type="info" />
-    <my-alert title="Warning alert" :closable="false" type="warning" />
-    <my-alert title="Error alert" :closable="false" type="error" />
+    <my-alert title="Success alert" type="success" show-icon />
+    <my-alert title="Info alert" type="info" show-icon />
+    <my-alert title="Warning alert" type="warning" show-icon />
+    <my-alert title="Error alert" type="error" show-icon />
   </div>
 </template>
 

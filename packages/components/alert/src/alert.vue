@@ -34,7 +34,7 @@ import {
 import { AlertPropsDefaults } from './alert'
 import type { AlertProps } from './alert'
 
-defineOptions({ title: 'MyAlert' })
+defineOptions({ name: 'MyAlert' })
 const emit = defineEmits<{
   close: [evt: MouseEvent]
 }>()

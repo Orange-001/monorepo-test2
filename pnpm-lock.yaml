@@ -64,8 +64,8 @@ importers:
         specifier: ^2.8.3
         version: 2.8.3(vue@3.5.4(typescript@5.6.2))
       my-ui-lib:
-        specifier: latest
-        version: 0.0.0-dev.2(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2))
+        specifier: 0.0.0-dev.3
+        version: 0.0.0-dev.3(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2))
       unocss:
         specifier: ^0.63.1
         version: 0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.4(@types/node@22.5.4)(less@4.2.0))
@@ -234,8 +234,8 @@ importers:
         specifier: ^2.8.3
         version: 2.8.3(vue@3.5.11(typescript@5.5.4))
       my-ui-lib:
-        specifier: latest
-        version: 0.0.0-dev.2(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))
+        specifier: 0.0.0-dev.3
+        version: 0.0.0-dev.3(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))
       unocss:
         specifier: ^0.63.1
         version: 0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
@@ -3104,8 +3104,8 @@ packages:
     resolution: {integrity: sha512-32GSKM3Wyc8dg/p39lWPKYu8zci9mJFzV1Np9Of0ZEpe6Fhssn/FbI7ywAMd40uX+p3ZKh3T5EeCFv81qS3HmQ==}
     engines: {node: '>= 10.13.0'}
 
-  my-ui-lib@0.0.0-dev.2:
-    resolution: {integrity: sha512-rnoMMFzgnU49mBmI2qSPKG+Blezqe7zZau4Oy9WBqLIrkDg1n860ySeR9/KNW56j7r/vSNIKj4JxKp098hqTmA==}
+  my-ui-lib@0.0.0-dev.3:
+    resolution: {integrity: sha512-nm+2tP78SraAwd8FBEKLDVA0S9xRo9ssXAcEeUz+1n5UwguDH1dMgrY4aPhIpuCNsbBEr2SIKx6Yzwxe9jIBfQ==}
     peerDependencies:
       vue: '>=3.5.4'
 
@@ -7737,7 +7737,7 @@ snapshots:
 
   mute-stdout@2.0.0: {}
 
-  my-ui-lib@0.0.0-dev.2(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4)):
+  my-ui-lib@0.0.0-dev.3(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4)):
     dependencies:
       dayjs: 1.11.13
       lodash-es: 4.17.21
@@ -7747,7 +7747,7 @@ snapshots:
       - '@types/lodash-es'
       - lodash
 
-  my-ui-lib@0.0.0-dev.2(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2)):
+  my-ui-lib@0.0.0-dev.3(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2)):
     dependencies:
       dayjs: 1.11.13
       lodash-es: 4.17.21

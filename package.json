@@ -16,6 +16,7 @@
     "docs:link": "cd ./docs && pnpm link ../dist/my-ui-lib",
     "docs:unlink": "cd ./docs && pnpm i",
     "playground:dev": "pnpm run -C playground dev --port 5174 --host",
+    "playground:build": "pnpm run -C playground build",
     "publish": "cd ./dist/my-ui-lib && npm publish"
   },
   "type": "module",

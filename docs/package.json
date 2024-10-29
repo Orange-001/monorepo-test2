@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build .",
+    "build": "vitepress build . --outDir ../dist/docs",
     "preview": "vitepress preview ."
   },
   "keywords": [],

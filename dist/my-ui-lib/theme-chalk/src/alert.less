@@ -1,0 +1,36 @@
+.my-alert {
+  width: 100%;
+  font-size: inherit;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  &--success {
+    background-color: rgb(28.3, 37.4, 23.8);
+    color: var(--el-color-success);
+  }
+  &--info {
+    background-color: rgb(32.4, 32.7, 33.3);
+    color: var(--el-color-info);
+  }
+  &--warning {
+    background-color: rgb(41, 34.2, 24);
+    color: var(--el-color-warning);
+  }
+  &--error {
+    background-color: rgb(42.5, 28.8, 28.8);
+    color: var(--el-color-error);
+  }
+  &__icon {
+    margin-right: 8px;
+  }
+  &-content {
+    .my-alert-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      cursor: pointer;
+    }
+  }
+}

@@ -14,6 +14,7 @@ export default defineConfig({
   title: 'My Ui Lib',
   description: 'A Vue 3 based component library for designers and developers',
   lastUpdated: true,
+  base: '/monorepo-test2/',
   locales: {
     root: {
       label: 'Chinese',

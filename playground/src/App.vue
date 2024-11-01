@@ -10,6 +10,8 @@ import {
 } from '@vue/repl'
 import Monaco from '@vue/repl/monaco-editor'
 import welcomeCode from './template/welcome.vue?raw'
+import myUiLibCode from './template/my-ui-lib.ts?raw'
+import mainCode from './template/main.vue?raw'
 import tsconfigCode from './template/tsconfig.json?raw'
 import Header from './components/Header.vue'
 
@@ -25,19 +27,19 @@ const previewOptions = {
       }
     <\/script>
   `,
-  customCode: {
-    importCode: `
-      import '@kechuanjia/my-ui-lib/dist/index.css';
-      import 'element-plus/dist/index.css';
-      import MyUiLib from '@kechuanjia/my-ui-lib';
-      import 'element-plus/theme-chalk/dark/css-vars.css';
-      import ElementPlus from 'element-plus';
-    `,
-    useCode: `
-      app.use(MyUiLib);
-      app.use(ElementPlus);
-    `,
-  },
+  // customCode: {
+  //   importCode: `
+  //     import '@kechuanjia/my-ui-lib/dist/index.css';
+  //     import 'element-plus/dist/index.css';
+  //     import MyUiLib from '@kechuanjia/my-ui-lib';
+  //     import 'element-plus/theme-chalk/dark/css-vars.css';
+  //     import ElementPlus from 'element-plus';
+  //   `,
+  //   useCode: `
+  //     app.use(MyUiLib);
+  //     app.use(ElementPlus);
+  //   `,
+  // },
 }
 
 const { importMap: builtinImportMap, vueVersion } = useVueImportMap({
@@ -52,18 +54,32 @@ const storeState: Partial<StoreState> = toRefs(
   reactive({
     builtinImportMap: mergeImportMap(builtinImportMap.value, {
       imports: {
-        'element-plus': '/node_modules/element-plus/dist/index.full.min.mjs',
-        'element-plus/': '/node_modules/element-plus/',
+        // 'element-plus': '/node_modules/element-plus/dist/index.full.min.mjs',
+        // 'element-plus/': '/node_modules/element-plus/',
+        // '@kechuanjia/my-ui-lib':
+        //   '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
+        // '@kechuanjia/my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
+        // '@my-ui-lib/my-ui-lib':
+        //   '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
+        // '@my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
+
+        'element-plus':
+          'https://cdn.jsdelivr.net/npm/element-plus@latest/dist/index.full.min.mjs',
+        'element-plus/': 'https://cdn.jsdelivr.net/npm/element-plus@latest/',
         '@kechuanjia/my-ui-lib':
-          '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
-        '@kechuanjia/my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
+          'https://cdn.jsdelivr.net/npm/@kechuanjia/my-ui-lib@latest/dist/index.full.min.mjs',
+        '@kechuanjia/my-ui-lib/':
+          'https://cdn.jsdelivr.net/npm/@kechuanjia/my-ui-lib@latest/',
         '@my-ui-lib/my-ui-lib':
-          '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
-        '@my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
+          'https://cdn.jsdelivr.net/npm/@kechuanjia/my-ui-lib@latest/dist/index.full.min.mjs',
+        '@my-ui-lib/':
+          'https://cdn.jsdelivr.net/npm/@kechuanjia/my-ui-lib@latest/',
       },
     }),
     vueVersion,
     files: {
+      'src/my-ui-lib.ts': new File('src/my-ui-lib.ts', myUiLibCode),
+      'src/main.vue': new File('src/main.vue', mainCode),
       'tsconfig.json': new File('tsconfig.json', tsconfigCode),
     },
     template: {

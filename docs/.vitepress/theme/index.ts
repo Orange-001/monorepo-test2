@@ -1,12 +1,12 @@
 import '../styles/css-var.less'
 import 'uno.css'
 import './custom.css'
-import 'my-ui-lib/dist/index.css'
+import '@kechuanjia/my-ui-lib/dist/index.css'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
 import DefaultTheme from 'vitepress/theme'
-import MyUiLib from 'my-ui-lib'
+import MyUiLib from '@kechuanjia/my-ui-lib'
 import ElementPlus from 'element-plus'
 
 import Overview from '../components/globals/overview.vue'

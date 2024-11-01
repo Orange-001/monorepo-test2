@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@kechuanjia/my-ui-lib": "0.0.0-dev.4",
     "@vueuse/core": "^11.1.0",
     "element-plus": "^2.8.3",
     "my-ui-lib": "latest",

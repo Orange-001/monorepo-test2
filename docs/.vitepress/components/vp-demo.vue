@@ -101,7 +101,7 @@ const onPlaygroundClick = () => {
   }
 
   const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(originCode))))
-  const link = `https://orange-001.github.io/my-ui-lib-playground/#${encoded}`
+  const link = `http://localhost:5174/#${encoded}`
   if (!isClient) return
   window.open(link)
 }

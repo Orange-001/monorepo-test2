@@ -5,6 +5,7 @@ import {
   Repl,
   useStore,
   useVueImportMap,
+  File,
   type StoreState,
 } from '@vue/repl'
 import Monaco from '@vue/repl/monaco-editor'
@@ -62,34 +63,16 @@ const storeState: Partial<StoreState> = toRefs(
       },
     }),
     vueVersion,
+    files: {
+      'tsconfig.json': new File('tsconfig.json', tsconfigCode),
+    },
+    template: {
+      welcomeSFC: welcomeCode,
+    },
   }),
 )
 const store = useStore(storeState, location.hash)
 watchEffect(() => history.replaceState({}, '', store.serialize()))
-
-async function init() {
-  const serializedState = location.hash.slice(1)
-  serializedState && store.deserialize(serializedState)
-
-  const files = store.getFiles()
-  const newFiles: Record<string, string> = {
-    'src/App.vue': welcomeCode,
-    'tsconfig.json': tsconfigCode,
-  }
-  for (const filename in files) {
-    let newFilename = filename
-    if (
-      !['import-map.json', 'tsconfig.json'].includes(filename) &&
-      !filename.startsWith('src/')
-    ) {
-      newFilename = `src/${filename}`
-    }
-    newFiles[newFilename] = files[filename]
-  }
-  await store.setFiles(newFiles, 'src/App.vue')
-}
-
-init()
 
 const refreshPreview = () => {
   replRef.value?.reload()

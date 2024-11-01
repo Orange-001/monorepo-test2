@@ -1,1 +1,1 @@
-export * from 'my-ui-lib'
+export * from '@kechuanjia/my-ui-lib'

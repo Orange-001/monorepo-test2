@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@kechuanjia/my-ui-lib": "0.0.0-dev.4",
     "@unocss/transformer-directives": "^0.63.6",
     "@vue/repl": "^4.4.2",
     "element-plus": "^2.8.3",

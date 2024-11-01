@@ -1,5 +1,5 @@
-import 'my-ui-lib/dist/index.css'
-import MyUiLib from 'my-ui-lib'
+import '@kechuanjia/my-ui-lib/dist/index.css'
+import MyUiLib from '@kechuanjia/my-ui-lib'
 import { getCurrentInstance } from 'vue'
 
 let installed = false

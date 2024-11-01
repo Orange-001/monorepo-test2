@@ -7,7 +7,6 @@ import Unocss from 'unocss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/my-ui-lib-playground/',
   plugins: [vue(), vueJsx(), Unocss()],
   resolve: {
     alias: {

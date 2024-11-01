@@ -65,7 +65,7 @@ importers:
         version: 2.8.3(vue@3.5.4(typescript@5.6.2))
       my-ui-lib:
         specifier: latest
-        version: 0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2))
+        version: 1.2.2(@angular/core@4.4.7(rxjs@5.5.12)(zone.js@0.8.29))(rxjs@5.5.12)(zone.js@0.8.29)
       unocss:
         specifier: ^0.63.1
         version: 0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.4(@types/node@22.5.4)(less@4.2.0))
@@ -224,6 +224,9 @@ importers:
 
   playground:
     dependencies:
+      '@kechuanjia/my-ui-lib':
+        specifier: 0.0.0-dev.4
+        version: 0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))
       '@unocss/transformer-directives':
         specifier: ^0.63.6
         version: 0.63.6
@@ -235,7 +238,7 @@ importers:
         version: 2.8.3(vue@3.5.11(typescript@5.5.4))
       my-ui-lib:
         specifier: latest
-        version: 0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))
+        version: 1.2.2(@angular/core@4.4.7(rxjs@5.5.12)(zone.js@0.8.29))(rxjs@5.5.12)(zone.js@0.8.29)
       unocss:
         specifier: ^0.63.1
         version: 0.63.1(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.9(@types/node@20.16.11)(less@4.2.0))
@@ -361,6 +364,12 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@angular/core@4.4.7':
+    resolution: {integrity: sha512-Jxs6gNTl5KjXflg5vi5rlnokq1johFccN94qSOgDv+Mg1iuGF2i9p7EHkw3Y8jBCVaSLw1qgHE+wMb6KTlJDLA==}
+    peerDependencies:
+      rxjs: ^5.0.1
+      zone.js: ^0.8.4
 
   '@ant-design/colors@6.0.0':
     resolution: {integrity: sha512-qAZRvPzfdWHtfameEGP2Qvuf838NhergR35o+EuVyB5XvSA98xod5r4utvi4TJ3ywmevm290g9nsCG5MryrdWQ==}
@@ -1056,6 +1065,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@kechuanjia/my-ui-lib@0.0.0-dev.4':
+    resolution: {integrity: sha512-NpUQDXF2/RiHYrBF1istArdQyLUBcCihgOav0Mmd31ffEYibjN+KkxZlEunVcLTsFWkh/KHv0MOKgY1gL3Q1oA==}
+    peerDependencies:
+      vue: '>=3.5.4'
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3104,10 +3118,12 @@ packages:
     resolution: {integrity: sha512-32GSKM3Wyc8dg/p39lWPKYu8zci9mJFzV1Np9Of0ZEpe6Fhssn/FbI7ywAMd40uX+p3ZKh3T5EeCFv81qS3HmQ==}
     engines: {node: '>= 10.13.0'}
 
-  my-ui-lib@0.0.0-dev.4:
-    resolution: {integrity: sha512-xUL8qREfvs+HZM22LtXSwnWhzlX1wmPkFWgQ3ys523cSwoLWiJDQhPteLJSRN7Ku8cWNd2v+1V1riHOBxigAgQ==}
+  my-ui-lib@1.2.2:
+    resolution: {integrity: sha512-ELOjPvaMD5K43BBDcCIwtmVrBp7SnEDPW2YK2UcPRw9USS+vu8H7IUuT9/IT5fhBk4yO6Zwhm6mqg++gilD6Cg==}
     peerDependencies:
-      vue: '>=3.5.4'
+      '@angular/core': ^4.0.0
+      rxjs: ^5.1.0
+      zone.js: ^0.8.4
 
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -3813,6 +3829,10 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  rxjs@5.5.12:
+    resolution: {integrity: sha512-xx2itnL5sBbqeeiVgNPVuQQ1nC8Jp2WfNJhXWHmElW9YmrpS9UVnNzhP3EH3HFqexO5Tlp8GhYY+WEcqcVMvGw==}
+    engines: {npm: '>=2.0.0'}
+
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
@@ -3991,6 +4011,10 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  symbol-observable@1.0.1:
+    resolution: {integrity: sha512-Kb3PrPYz4HanVF1LVGuAdW6LoVgIwjUYJGzFe7NDrBLCN4lsV/5J0MFurV+ygS4bRVwrCEt2c7MQ1R2a72oJDw==}
+    engines: {node: '>=0.10.0'}
+
   synckit@0.9.1:
     resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4062,6 +4086,9 @@ packages:
         optional: true
       '@swc/wasm':
         optional: true
+
+  tslib@1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
 
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
@@ -4442,6 +4469,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zone.js@0.8.29:
+    resolution: {integrity: sha512-mla2acNCMkWXBD+c+yeUrBUrzOxYMNFdQ6FGfigGGtEVBPJx07BQeJekjt9DmH1FtZek4E9rE1eRR9qQpxACOQ==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -4576,6 +4606,12 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@angular/core@4.4.7(rxjs@5.5.12)(zone.js@0.8.29)':
+    dependencies:
+      rxjs: 5.5.12
+      tslib: 1.14.1
+      zone.js: 0.8.29
 
   '@ant-design/colors@6.0.0':
     dependencies:
@@ -5148,6 +5184,16 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@kechuanjia/my-ui-lib@0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4))':
+    dependencies:
+      dayjs: 1.11.13
+      lodash-es: 4.17.21
+      lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
+      vue: 3.5.11(typescript@5.5.4)
+    transitivePeerDependencies:
+      - '@types/lodash-es'
+      - lodash
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -7737,25 +7783,11 @@ snapshots:
 
   mute-stdout@2.0.0: {}
 
-  my-ui-lib@0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.11(typescript@5.5.4)):
+  my-ui-lib@1.2.2(@angular/core@4.4.7(rxjs@5.5.12)(zone.js@0.8.29))(rxjs@5.5.12)(zone.js@0.8.29):
     dependencies:
-      dayjs: 1.11.13
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
-      vue: 3.5.11(typescript@5.5.4)
-    transitivePeerDependencies:
-      - '@types/lodash-es'
-      - lodash
-
-  my-ui-lib@0.0.0-dev.4(@types/lodash-es@4.17.12)(lodash@4.17.21)(vue@3.5.4(typescript@5.6.2)):
-    dependencies:
-      dayjs: 1.11.13
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
-      vue: 3.5.4(typescript@5.6.2)
-    transitivePeerDependencies:
-      - '@types/lodash-es'
-      - lodash
+      '@angular/core': 4.4.7(rxjs@5.5.12)(zone.js@0.8.29)
+      rxjs: 5.5.12
+      zone.js: 0.8.29
 
   nanoid@3.3.7: {}
 
@@ -8434,6 +8466,10 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  rxjs@5.5.12:
+    dependencies:
+      symbol-observable: 1.0.1
+
   safe-buffer@5.2.1: {}
 
   safe-identifier@0.4.2: {}
@@ -8609,6 +8645,8 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.0
 
+  symbol-observable@1.0.1: {}
+
   synckit@0.9.1:
     dependencies:
       '@pkgr/core': 0.1.1
@@ -8679,6 +8717,8 @@ snapshots:
       typescript: 5.6.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+
+  tslib@1.14.1: {}
 
   tslib@2.7.0: {}
 
@@ -9181,5 +9221,7 @@ snapshots:
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zone.js@0.8.29: {}
 
   zwitch@2.0.4: {}

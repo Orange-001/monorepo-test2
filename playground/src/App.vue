@@ -26,9 +26,9 @@ const previewOptions = {
   `,
   customCode: {
     importCode: `
-      import 'my-ui-lib/dist/index.css';
+      import '@kechuanjia/my-ui-lib/dist/index.css';
       import 'element-plus/dist/index.css';
-      import MyUiLib from 'my-ui-lib';
+      import MyUiLib from '@kechuanjia/my-ui-lib';
       import 'element-plus/theme-chalk/dark/css-vars.css';
       import ElementPlus from 'element-plus';
     `,
@@ -53,11 +53,12 @@ const storeState: Partial<StoreState> = toRefs(
       imports: {
         'element-plus': '/node_modules/element-plus/dist/index.full.min.mjs',
         'element-plus/': '/node_modules/element-plus/',
-        'my-ui-lib': '/node_modules/my-ui-lib/dist/index.full.min.mjs',
-        'my-ui-lib/': '/node_modules/my-ui-lib/',
+        '@kechuanjia/my-ui-lib':
+          '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
+        '@kechuanjia/my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
         '@my-ui-lib/my-ui-lib':
-          '/node_modules/my-ui-lib/dist/index.full.min.mjs',
-        '@my-ui-lib/': '/node_modules/my-ui-lib/',
+          '/node_modules/@kechuanjia/my-ui-lib/dist/index.full.min.mjs',
+        '@my-ui-lib/': '/node_modules/@kechuanjia/my-ui-lib/',
       },
     }),
     vueVersion,
